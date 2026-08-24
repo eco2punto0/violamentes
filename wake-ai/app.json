@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "WAKE AI",
+    "slug": "wake-ai",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "wakeai",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#05050A",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.wakeai.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "WAKE AI necesita el micrófono para escucharte y confirmar que te despertaste.",
+        "NSSpeechRecognitionUsageDescription": "WAKE AI convierte tu voz en texto para conversar con vos durante el despertar.",
+        "NSCalendarsUsageDescription": "WAKE AI lee tu primer evento del día para el resumen matutino.",
+        "NSLocationWhenInUseUsageDescription": "WAKE AI usa tu ubicación para mostrarte el clima en el resumen matutino.",
+        "UIBackgroundModes": ["audio", "fetch", "remote-notification"]
+      }
+    },
+    "android": {
+      "package": "com.wakeai.app",
+      "permissions": [
+        "RECORD_AUDIO",
+        "READ_CALENDAR",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "VIBRATE",
+        "WAKE_LOCK",
+        "POST_NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      "expo-speech-recognition",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#7C5CFF"
+        }
+      ]
+    ]
+  }
+}
